@@ -1,51 +1,70 @@
 
 <section class="v-80" style="background-color: #9A616D;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem;">
-            <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?cs=srgb&dl=pexels-pixabay-462235.jpg&fm=jpg"
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-              </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
-  
-                  <form>
-  
-                    <div class="d-flex align-items-center mb-3 pb-1">
-                      <i class="fas fa-cubes fa-2x me-3" style="color: hsl(19, 100%, 55%);"></i>
-                      <span class="h1 fw-bold mb-0">
-                      </span>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img
+                src="https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg?cs=srgb&dl=pexels-pixabay-462235.jpg&fm=jpg"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                  <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px; text-align: center;">Sign into your
+                    account</h4>
+                  <div class="form-outline mb-4">
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" name="username" [(ngModel)]="form.userName" required
+                        minlength="3" maxlength="20" #username="ngModel" />
+                      <div class="alert-danger" role="alert" *ngIf="username.errors && f.submitted">
+                        <div *ngIf="username.errors['required']">Username is required</div>
+                        <div *ngIf="username.errors['minlength']">
+                          Username must be at least 3 characters
+                        </div>
+                        <div *ngIf="username.errors['maxlength']">
+                          Username must be at most 20 characters
+                        </div>
+                      </div>
                     </div>
-  
-                    <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h4>
-  
-                    <div class="form-outline mb-4">
-                      <input type="text" [(ngModel)]="userData.username" name="username" class="form-control form-control-lg" />
-                      <label class="form-label" for="form2Example17">User Name</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="form.userPassword" required
+                      minlength="8" #password="ngModel" />
+                    <div class="alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                      <div *ngIf="password.errors['required']">Password is required</div>
+                      <div *ngIf="password.errors['minlength']">
+                        Password must be at least 8 characters
+                      </div>
                     </div>
-  
-                    <div class="form-outline mb-4">
-                      <input type="password" [(ngModel)]="userData.password" name="password" class="form-control form-control-lg" />
-                      <label class="form-label" for="form2Example27">Password</label>
-                    </div>
-  
-                    <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" type="button" (click)="login()">Login</button>
-                    </div>
-                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/register"
-                        style="color: #393f81;">Register here</a></p>
-                    <a href="#!" class="small text-muted">Terms of use.</a>
-                    <a href="#!" class="small text-muted">Privacy policy</a>
-                  </form>
-  
+                  </div>
                 </div>
+                  <br>
+                    <div class="pt-1 mb-4" style="padding-left: 150px;">
+                    <button class="btn btn-outline-dark">Login</button>
+                  </div>
+                  <div class="alert alert-warning" role="alert" *ngIf="f.submitted && isSignUpFailed">
+                    Login failed!<br />{{ errorMessage }}
+                  </div>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/register"
+                    style="color: #393f81;">Register here</a></p>
+                </form>
+                <div class="alert alert-success" *ngIf="isSuccessful">
+                  Your login is successful!
+              </div>
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

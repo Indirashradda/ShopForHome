@@ -1,0 +1,9 @@
+.container-fluid{
+    background-color: rgb(247, 241, 242);
+
+}
+.text-center{
+    color: #9A616D;
+    font-style: bold;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
