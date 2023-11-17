@@ -1,0 +1,27 @@
+.card {
+    max-width: 300px; /* Adjust the max-width as needed */
+    margin: 15px auto; /* Center the card horizontally and provide spacing */
+    text-align: center; /* Center the text within the card */
+    padding: 15px; /* Add padding for consistent spacing */
+  }
+  
+  .card-img-top {
+    max-width: 100%; /* Make sure the image doesn't exceed the card width */
+    height: auto; /* Maintain the image aspect ratio */
+    display: block; /* Remove any default styling that might affect the image */
+    margin: 0 auto 15px; /* Center the image horizontally and add spacing below it */
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-title, .card-text, p, .btn {
+    margin: 0; /* Remove default margins to ensure consistent spacing */
+  }
+  
+  .btn {
+    margin-top: 10px; /* Add margin above the button */
+  }
