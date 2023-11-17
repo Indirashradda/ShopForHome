@@ -1,0 +1,61 @@
+    <app-amdinheader></app-amdinheader>
+    <br>
+    <div class="d-flex justify-content-center" style="margin-left: 30px; margin-right: 30px; gap: 10px;">
+      <button type="submit" class="admin btn btn-outline-dark rounded-pill" id="btn2" (click)="onSubmitAdd()">Add</button>
+      <button type="submit" class="admin btn btn-outline-dark rounded-pill" id="btn3" (click)="onSubmitUpdate()">Update</button>
+      <button type="submit" class="admin btn btn-outline-dark rounded-pill" id="btn4" (click)="onSubmitDelete()">
+        Delete
+      </button>
+      <button type="submit" class="admin btn btn-outline-dark rounded-pill" id="btn5" (click)="onSubmitView()">View All</button>
+    </div>
+    <br><br>
+    
+    <section class="Data" style="margin-left: 30px; margin-right: 30px;">
+        <table class="table">
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Description</th>
+            <th>Price</th>
+            <th>ProductUrl</th>
+                <tr>
+                    <td><input type="number" [(ngModel)]="productId" minlength="1"/></td>
+                    <td><input type="text" [(ngModel)]="productName"/></td>
+                    <td><input type="text" [(ngModel)]="productCategory"/></td>
+                    <td><input type="text" [(ngModel)]="productDescription"/></td>
+                    <td><input type="text" [(ngModel)]="productPrice"/></td>
+                    <td><input type="text" [(ngModel)]="productUrl"/></td>
+
+                </tr>
+        </table>
+    </section>
+    
+    <section class="Data" style="margin-left: 30px; margin-right: 30px;">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Product Id</th>
+              <th>Product Name</th>
+              <th>Product Category</th>
+              <th>Product Description</th>
+              <th>Price</th>
+              <th>Product Url</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let new of result">
+              <td>{{ new.productId }}</td>
+              <td>{{ new.productName }}</td>
+              <td>{{ new.productCategory }}</td>
+              <td>{{ new.productDescription }}</td>
+              <td>{{ new.productPrice }}</td>
+              <td>
+                <a href="{{ new.productUrl }}" target="_blank" class="d-inline-block text-truncate" style="max-width: 150px;" title="{{ new.productUrl }}">
+                  {{ new.productUrl }}
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      

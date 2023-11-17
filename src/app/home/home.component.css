@@ -1,0 +1,52 @@
+.carousel-item {
+    height:80vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+  }
+  .card-top .container {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed for your layout */
+    align-items: center;
+  }
+  
+  .card-top .item {
+    text-align: center; /* Center the content within each item */
+    flex: 1; /* Distribute available space equally among items */
+    max-width: 15%; /* Adjust as needed for your layout */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .card-top .item a {
+    text-decoration: none;
+  }
+  
+  .card-top .item img {
+    max-width: 100%; /* Make sure the image doesn't exceed the container width */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  .card-top .item p {
+    font-size: medium;
+    margin: 0; /* Remove default margin */
+  }
+  
+  .item a:hover{
+    color: #9A616D;;
+  }
+  
+  

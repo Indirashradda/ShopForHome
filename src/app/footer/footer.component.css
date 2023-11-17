@@ -1,0 +1,16 @@
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
+/* category-dropdown.component.css */
+.category-dropdown {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  select {
+    padding: 8px;
+    font-size: 16px;
+  }
+  

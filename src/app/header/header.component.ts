@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+
+  username:any;
+
+  constructor(public auth:AuthService,private toastr: ToastrService) {
+  }
+
+
+  logout() {
+   
+    this.auth.logout()
+    this.toastr.success('successfully logged out');
+  }
 
 }

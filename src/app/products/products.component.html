@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<!-- <div class="container mt-4"> -->
+  <!-- <div class="row">
+    <div class="col-3" *ngFor="let product of result">
+      <div class="card mb-4">
+        <img src="{{  product.productUrl }}" style="height: 200px" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ product.productName }}</h5>
+          <p class="card-text">{{ product.productDescription }}</p>
+          <p class="card-text">${{ product.productPrice }}</p>
+          <a (click)="addtocart(product)" routerLink="/cart" class="btn btn-outline-dark">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container mt-4 mb-4 d-flex flex-column">
+  <div class="row flex-grow-1">
+    <div class="col-3 mb-4" *ngFor="let product of result">
+      <div class="card mb-4 h-100">
+        <img src="{{ product.productUrl }}" style="height: 200px" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ product.productName }}</h5>
+          <p class="card-text">{{ product.productDescription }}</p>
+          <p class="card-text">₹{{ product.productPrice }}</p>
+          <a (click)="addtocart(product)" routerLink="/cart" class="btn btn-outline-dark">Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
